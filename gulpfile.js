@@ -37,7 +37,7 @@ function build(cb) {
     "svgo",
     "sass",
     "nunjucks",
-    // 'webpack',
+    'webpack',
     "copy"
     // cb
   );
@@ -75,7 +75,7 @@ gulp.task(
     "svgo",
     "sass",
     "nunjucks",
-    // 'webpack',
+    'webpack',
     // "list-pages",
     "copy"
   )

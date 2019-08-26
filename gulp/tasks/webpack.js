@@ -1,10 +1,10 @@
-var gulp          = require('gulp');
-var webpack       = require('webpack');
+var gulp = require('gulp');
+var webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-var gutil         = require('gulp-util');
-var notify        = require('gulp-notify');
-var server        = require('./server');
-var config        = require('../config');
+var gutil = require('gulp-util');
+var notify = require('gulp-notify');
+var server = require('./server');
+var config = require('../config');
 var webpackConfig = require('../../webpack.config').createConfig;
 
 function handler(err, stats, cb) {
@@ -37,14 +37,14 @@ function handler(err, stats, cb) {
 
 
 
-gulp.task('webpack', function() {
-  return gulp.src('src/js/app.js')
-    .pipe(webpackStream(webpackConfig(config.env), webpack, function(err, stats) {
-      /* Use stats to do more things if needed */
-      handler(err, stats);
-      // return false;
-    }))
-    .pipe(gulp.dest('dist/'));
+gulp.task('webpack', function () {
+    return gulp.src('src/js/app.js')
+        .pipe(webpackStream(webpackConfig(config.env), webpack, function (err, stats) {
+            /* Use stats to do more things if needed */
+            handler(err, stats);
+            // return false;
+        }))
+        .pipe(gulp.dest('dist/'));
 });
 
 // gulp.task('webpack:watch', function() {
@@ -55,12 +55,12 @@ gulp.task('webpack', function() {
 // });
 
 
-let build =  function(gulp) {
-    return gulp.parallel('webpack'); 
+let build = function (gulp) {
+    return gulp.parallel('webpack');
 };
 
-let watch =  function(gulp) {
-    return function(){
+let watch = function (gulp) {
+    return function () {
         return gulp.watch(config.src.js + '/*.*', gulp.parallel('webpack'));
     }
 };
