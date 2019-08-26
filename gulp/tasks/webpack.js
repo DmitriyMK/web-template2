@@ -44,7 +44,8 @@ gulp.task('webpack', function () {
             handler(err, stats);
             // return false;
         }))
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('build/js/'));
+    // .pipe(gulp.dest('dist/'));
 });
 
 // gulp.task('webpack:watch', function() {
